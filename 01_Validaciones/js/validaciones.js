@@ -1,0 +1,47 @@
+/*
+Las validaciones para este formulario se realizaran mediante el uso de expresiones regulares, las cuales las vamos a dividir en 3:
+1.- Texto para el nombre
+2.- Numerico para la boleta
+3.- Debe tener un patron para la fecha
+
+Mosila firefox- expresiones regulares
+
+Las expresiones regulares son patrones que no ayudan a validad cadenas bajo ciertas condiciones.
+
+
+*/
+
+const patrones = {
+    nombre: /^[A-Za-zÁÉÍÓÚÑáéíóúÜü\s]{2,60}$/,
+    boleta: /^\d{10}$/,
+    fecha: /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\{4}$/
+};
+
+const mensajes = {
+    nombre: "Solo letra u espacios, entre 2 y 60 caracteres.",
+    boleta: "Debe tener exactamente 10 digitos numericos",
+    fecha: "La fecha debe tener el formato DD/MM/AAAA"
+}
+
+function validadCampo(campo, valor) {
+    return patrones[campo].test(valor.trim());
+}
+
+// Para validar el formulario debemos ocupar los principios de obtencion y manipulacion de los elementos del DOM
+
+if (typeof document !== 'undefined') {
+    const formulario = document.getElementById('form-registro');
+    formulario.addEventListener('submit', (evento) => {
+        evento.preventDefault(); //Evita que el formilario se envie automaticamente
+        let formularioVaido = true;
+        for(const campo of Object.keys(patrones)){
+            const errorSpan = document.getElementById('error-${campo}');
+            const esValido = validarCampo(campo, input.value);
+            input.classList.toggle('invalido', !esValido);
+            spanError.textContent = esValido ? '' : mensajes[campo];
+            if (!esValido) formularioValido = false;
+        }
+        const mensajeExito = document.getElementById('mensaje-exito');
+        mensajeExito.textContent = formularioValido ? 'Registro exitoso!' : '';       
+    })
+}
