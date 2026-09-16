@@ -62,3 +62,44 @@ footer{
 .tarjeta a:hover {
     text-decoration: underline;
 }
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.error {
+    text-decoration: none;
+    text-align: center;
+    color: red;
+    padding: 1rem;
+}
+
+label {
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input {
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+    background-color: rgb(235, 222, 222);
+}
+
+button {
+    background-color: #cfdee0;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0.5rem;
+}
+
+button:hover {
+    background-color: rgb(177, 153, 234);
+    padding: 0.7rem;
+}
+
+.mensaje-exito {
+    color: green;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0.5rem;
+}
