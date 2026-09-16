@@ -14,7 +14,7 @@ Las expresiones regulares son patrones que no ayudan a validad cadenas bajo cier
 const patrones = {
     nombre: /^[A-Za-zÁÉÍÓÚÑáéíóúÜü\s]{2,60}$/,
     boleta: /^\d{10}$/,
-    fecha: /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\{4}$/
+    fecha: /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/
 };
 
 const mensajes = {
@@ -23,7 +23,7 @@ const mensajes = {
     fecha: "La fecha debe tener el formato DD/MM/AAAA"
 }
 
-function validadCampo(campo, valor) {
+function validarCampo(campo, valor) {
     return patrones[campo].test(valor.trim());
 }
 
@@ -33,9 +33,10 @@ if (typeof document !== 'undefined') {
     const formulario = document.getElementById('form-registro');
     formulario.addEventListener('submit', (evento) => {
         evento.preventDefault(); //Evita que el formilario se envie automaticamente
-        let formularioVaido = true;
+        let formularioValido = true;
         for(const campo of Object.keys(patrones)){
-            const errorSpan = document.getElementById('error-${campo}');
+            const input = document.getElementById(campo);
+            const spanError = document.getElementById(`error-${campo}`);
             const esValido = validarCampo(campo, input.value);
             input.classList.toggle('invalido', !esValido);
             spanError.textContent = esValido ? '' : mensajes[campo];
