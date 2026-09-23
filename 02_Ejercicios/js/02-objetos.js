@@ -8,6 +8,8 @@ const taller = {
 
 // TODO: Object.keys — imprime solo los nombres de las propiedades de `taller`
 
+
+
 // TODO: Object.values — imprime solo los valores
 
 // TODO: Object.entries — recorre con for..of e imprime "campo: valor" de cada propiedad
