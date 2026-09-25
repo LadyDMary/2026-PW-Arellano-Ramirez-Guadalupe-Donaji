@@ -68,7 +68,7 @@ formArreglos.addEventListener('submit', (evento) =>{
 });
 
 // segunda parte
-const formObjeto = document.getElementById("form-Objeto");
+const formObjeto = document.getElementById('form-objeto');
 const resultadoObjeto = document.getElementById("resultado-objeto");
 
 formObjeto.addEventListener('submit', (evento) =>{
@@ -90,7 +90,7 @@ formObjeto.addEventListener('submit', (evento) =>{
             resultado = JSON.stringify(Object.keys(taller));
             break;
         case 'values':
-            
+            resultado = Object.entries(taller).map(([campo, valor]) => `${campo}: ${valor}`).join("\n");
             break;
         case 'entries':
             break;
