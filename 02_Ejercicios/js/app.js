@@ -90,13 +90,15 @@ formObjeto.addEventListener('submit', (evento) =>{
             resultado = JSON.stringify(Object.keys(taller));
             break;
         case 'values':
-            resultado = Object.entries(taller).map(([campo, valor]) => `${campo}: ${valor}`).join("\n");
             break;
         case 'entries':
+            resultado = Object.entries(taller).map(([campo, valor]) => `${campo}: ${valor}`).join("\n"); 
             break;
         case 'stringify':
             break;
         case 'roundtrip':
+            const textoJson = JSON.stringify(taller, null, 2);
+            const objetoDeVuelta = JSON
             break;
     }
 
