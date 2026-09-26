@@ -44,8 +44,10 @@
                 <button type="submit" >Ejecutar</button>
 
             </form>
+            <div class="resultado-box">
 
             <output class="resultado" id="resultado-arreglo" for="form-arreglo" ></output>
+            </div>
         </section>
         <section class="ejercicio" aria-labelledby="titulo-objeto">
             <h2 id="titulo-objeto">Manejo de objetos y JSON</h2>
@@ -66,7 +68,7 @@
                 </div>
                 <div class="campo">
                     <label for="obj-inscrito">Inscritos</label>
-                    <input type="number" name="obj-inscritos" id="obj-inscrito" value="25" min="0">
+                    <input type="number" name="obj-inscrito" id="obj-inscrito" value="25" min="0">
                 </div>
                 <div class="campo">
                     <label for="operacion-objeto">Tipo de Operacion</label>
@@ -80,8 +82,16 @@
                 </div>
                 <button type="submit">Ejecutar Opcion</button>
             </form>
-            <output class="resultado" id="resultado-objeto" for="form-objeto"></output>
-        </section>
+            <div class="resultado-box">
+                <output class="resultado" id="resultado-objeto" for="form-objeto"></output>
+            </div>
+            </section>
+            <section>
+                <h2>Gatos: </h2>
+                <img class="gato_gif" src="../img/gato01.gif" alt="gif de gato">
+                <img class="gato_gif" src="../img/gato02.gif" alt="otro gif de gato">
+                <img class="gato_gif" src="../img/gato03.gif" alt="gif de un gato en una caja">
+            </section>
     </main>
 
     <script src="./js/app.js" ></script>

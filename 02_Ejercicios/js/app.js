@@ -100,7 +100,7 @@ formObjeto.addEventListener('submit', (evento) =>{
             break;
         case 'roundtrip':
             const textoJson = JSON.stringify(taller, null, 2);
-            const objetoDeVuelta = JSON
+            const objetoDeVuelta = JSON.parse(textoJson)
             resultado = [
                 '',
                 textoJson,
