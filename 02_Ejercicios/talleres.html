@@ -92,9 +92,30 @@
                 <img class="gato_gif" src="../img/gato02.gif" alt="otro gif de gato">
                 <img class="gato_gif" src="../img/gato03.gif" alt="gif de un gato en una caja">
             </section>
+            
     </main>
 
     <script src="./js/app.js" ></script>
-    
+    <section class="ejercicio">
+        <h2 id="titulo-texto">3.- Strings y fechas</h2>
+        <p>La fecha usa el mismo formato <strong>DD/MM/AAAA</strong> valido con regex</p>
+        <form action="" id="form-strings">
+            <div class="campo">
+                <label for="nombre-texto">Nombre (con espacios de sobre aproposito): </label>
+                <input type="text" name="nombre-texto" id="nombre-texto" value=" Maria Lopez">
+            </div>
+            <div class="campo">
+                <label for="cupo-texto">Cupo (para el template)</label>
+                <input type="number" name="cupo-texto" id="cupo-texto" value="25" min="0">
+            </div>
+            <div class="campo">
+                <label for="fecha-texto">Fecha de asistencia (DD/MM/AAAA)</label>
+                <input type="text" name="fecha-texto" id="fecha-texto" value="05/09/2026">
+            </div>
+            <span class="error" id="error-fecha"></span>
+            <button type="submit">Ejecutar</button>
+        </form>
+        <output class="resultado" id="resultado-texto"></output>
+    </section>
 </body>
 </html>
