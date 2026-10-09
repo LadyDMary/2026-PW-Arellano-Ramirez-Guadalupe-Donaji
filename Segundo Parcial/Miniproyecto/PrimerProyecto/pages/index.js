@@ -1,0 +1,12 @@
+import Link from "next/link";
+
+export default function Home() {
+    return(
+        <main>
+            <h1>ejemplo de Miniproyecto con Next</h1>
+            <p>
+                <Link href="/practica/1">ir a la /practica/1 como una ruta dinamica</Link>
+            </p>
+        </main>
+    );
+}
