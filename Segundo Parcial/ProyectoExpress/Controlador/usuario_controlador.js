@@ -28,4 +28,4 @@ async function obtenerUsuario(req, res) {
     }
 }
 
-/// deberan realizar   los controladorss de asistencia y talleres con sus funciones correspòndientes-
+/// deberan realizar   los controladorss de asistencia y talleres con sus funciones correspòndientes-cd ..
