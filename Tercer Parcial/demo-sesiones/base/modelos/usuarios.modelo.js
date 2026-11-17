@@ -5,7 +5,16 @@ function crearModeloUsuarios(pool) {
   // Regresa el usuario (sin el hash) si la contraseña es correcta, o null si no.
   async function verificar(usuario, contrasena) {
     // Paso 2 (en clase)
-    throw new Error('Falta programar verificar() en clase (paso 2)');
+    const [filas] = await pool.query(
+      "SELECT id, usuario, nombre, rol, contrasena_hash FROM usuarios WHERE usuario = ?",
+      [usuario]
+    );
+    const fila = filas[0];
+    if(!fila) return null;
+    const coincide = await bcrypt.compare(contrasena, fila.contrasena_hash);
+    if(!coincide) return null;
+    const {contrasena_hash, ...publico} = fila;
+    return publico;
   }
 
   return { verificar };
